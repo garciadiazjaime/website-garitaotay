@@ -1,0 +1,574 @@
+/* ----------- SETUP -------------- */	
+@import "compass/css3/border-radius"
+@import "compass/css3/transition"
+@import "compass/css3/font-face"
+@import "compass/css3/images"
+@import "compass/css3/box-shadow"
+@import "compass/css3/user-interface"
+@import "compass/css3/box-sizing"
+@import "compass/css3/opacity"
+
+@import "mixins.sass"
+
+$back_fe: "../media/fe/"
+
+
+/* ****************** FONTFACE ************** */
+@font-face
+	font-family: 'Source_Sans_Pro_Regular'
+	src: url('../fonts/sourcesanspro_regular.eot')
+	src: url('../fonts/sourcesanspro_regular.eot?#iefix') format('embedded-opentype'), url('../fonts/sourcesanspro_regular.woff') format('woff'), url('../fonts/sourcesanspro_regular.ttf') format('truetype'), url('../fonts/sourcesanspro_regular.svg#Source_Sans_Pro_Regular') format('svg')
+	font-weight: normal
+	font-style: normal
+	
+@font-face
+	font-family: 'Source_Sans_Pro_Extralight'
+	src: url('../fonts/sourcesanspro_extralight.eot')
+	src: url('../fonts/sourcesanspro_extralight.eot?#iefix') format('embedded-opentype'), url('../fonts/sourcesanspro_extralight.woff') format('woff'), url('../fonts/sourcesanspro_extralight.ttf') format('truetype'), url('../fonts/sourcesanspro_extralight.svg#Source_Sans_Pro_Extralight') format('svg')
+	font-weight: normal
+	font-style: normal
+	
+@font-face
+	font-family: 'Source_Sans_Pro_Bold'
+	src: url('../fonts/sourcesanspro_bold.eot')
+	src: url('../fonts/sourcesanspro_bold.eot?#iefix') format('embedded-opentype'), url('../fonts/sourcesanspro_bold.woff') format('woff'), url('../fonts/sourcesanspro_bold.ttf') format('truetype'), url('../fonts/sourcesanspro_bold.svg#Source_Sans_Pro_Bold') format('svg')
+	font-weight: normal
+	font-style: normal
+	
+
+%sourcesans
+	font-family: 'Source_Sans_Pro_Regular', Arial, sans-serif
+	font-weight: normal
+
+
+%sourcesans_extralight
+	font-family: 'Source_Sans_Pro_Extralight', Arial, sans-serif
+	font-weight: normal
+
+
+%sourcesans_bold
+	font-family: 'Source_Sans_Pro_Bold', Arial, sans-serif
+	font-weight: normal
+
+
+/* ****************** GENERAL ************** */
+body
+	background: #f6f6f6
+	color: #656565
+	@extend %sourcesans
+	font-size: 14px
+	margin: 0
+	padding: 0
+	
+a
+	text-decoration: none
+
+	img
+		border: none
+
+h2, h3, h4
+	@extend %sourcesans_bold
+	font-weight: normal
+	letter-spacing: .03em
+	
+h1
+	border-bottom: 1px solid #FFFFFF
+	@extend %sourcesans
+	font-weight: normal
+	letter-spacing: .03em
+	margin: 80px 0 5px 40px
+	padding: 0 0 20px
+	text-align: left
+	width: 231px
+	
+	strong
+		@extend %sourcesans_bold
+		font-weight: normal
+
+
+	
+
+h2
+	color: #254e89
+	font-size: 28px
+	
+	span
+		border-bottom: 3px solid #b11f24
+		display: inline-block
+		margin: 0 0 -3px 3px
+		width: 14px
+		
+
+img
+	border: none
+	
+/* --------- Clases - GENERAL -------- */
+
+.button
+	@include background-image(linear-gradient(#e8e9ea, #ffffff))
+	border: 1px solid #b2b2b2
+	@include border-radius()
+	color: #656565
+	display: inline-block
+	padding: 3px
+	
+	span
+		@include background-image(linear-gradient(#ffffff,#ffffff 4%, #f6f6f6 16%, #d5dade))
+		border: 1px solid #b2b2b2
+		@include border-radius()
+		display: block
+		padding: 3px 0 3px 12px
+		
+		span
+			background: transparent url(#{$back_fe}red_arrow.png) right center no-repeat
+			border: none
+			min-width: 70px
+			padding: 0 20px 0 0
+			
+			
+	&:hover
+		color: #b2b2b2
+		
+			
+		span
+			@include background-image(linear-gradient(#d5d9de, #f6f6f6 89%, #ffffff 89%, #ffffff))
+			
+			span
+				background: transparent url(#{$back_fe}red_arrow.png) right center no-repeat
+
+
+.big_text
+	font-size: 130%
+
+.arrow_list
+	list-style-type: none
+	margin: 15px 0
+	padding: 0
+
+	li
+		background: url(#{$back_fe}red_list_arrow.png) left 6px no-repeat
+		padding: 0 0 0 20px
+		
+	h4
+		font-size: 18px
+		margin: 0
+		
+	p
+		margin-top: 0
+
+.small_arrow_list, .small_blue_arrow_list
+	list-style-type: none
+	margin: 15px 0
+	padding: 0
+
+	li
+		background: url(#{$back_fe}red_list_small_arrow.png) left 5px no-repeat
+		padding: 0 0 0 20px
+		
+.small_blue_arrow_list
+	li
+		background:  url(#{$back_fe}blue_list_small_arrow.png) left 7px no-repeat
+		padding: 0 0 0 15px
+
+.top_gray_line
+	border-top: 5px solid #f7f7f7
+	
+.arrow_list.strong
+	@extend %sourcesans_bold
+	
+.slideshow
+	background: url(../media/fe/pattern_sliders.png) left bottom repeat-x
+	height: 215px
+	padding: 0 0 18px
+	
+/* ****************** LAYOUT ************** */
+.container
+	margin: 0 auto
+	width: 1024px
+	
+.column	
+	display: inline-block
+	vertical-align: top
+
+.half
+	padding: 0 0 0 2%
+	width: 48%
+
+.half.first
+	margin:  0 1% 0 0
+	padding: 0 1% 0 0
+	width: 48%
+
+#content
+	background: #ffffff
+	@include box-shadow(0 0 10px rgba(0,0,0,.3))
+	margin: 0 auto 180px
+	padding: 50px 0 130px
+	position: relative
+	width: 1024px
+	
+	.container
+		width: 940px
+		
+	.red_decoration
+		display: block
+		position: absolute
+		margin-left: 0
+		left: 0
+		top: 0
+		width: 225px
+
+		
+.light_gray
+	background-color: #f9f9f9
+	
+.gradient_white
+	@include background-image(linear-gradient(#ffffff, #f6f6f6))
+	
+#wrapper
+	overflow: hidden
+	width: 100%
+
+/* ****************** HEADER ************** */
+#header
+	background: url(#{$back_fe}header_bottom_pattern.jpg) repeat
+	border-bottom: 1px solid #8c8c8c
+	color: #ffffff
+	font-size: 15px
+	overflow: hidden
+	padding: 0 0 30px
+	position: relative
+	z-index: 50
+
+	ul.menu
+		margin: 30px 0 0 
+		border-right: 1px solid #ffffff 
+		list-style-type: none
+		padding: 0
+
+		a
+			color: #ffffff
+			display: block
+			padding: 5px 5px 5px 25px
+		
+			&:hover, a.active
+				background: #254e89
+				color: #ffffff
+			
+			
+	.column.first
+		text-align: left
+		width: 226px
+	
+	.column
+		text-align: right
+		width: 798px
+
+	#header_social
+		display: inline-block
+		text-align: right
+		padding: 55px 0 0
+		
+		img
+			display: inline-block
+			margin: 0 10px 0 0
+			vertical-align: top
+		
+			&:hover
+				opacity: .50
+				@include transition(opacity 0.3s ease-in)
+
+	#language
+		border-bottom: 3px solid red
+		color: #ffffff
+		display: inline-block
+		margin: 0 0 0
+		padding: 52px 0 7px
+		text-align: left
+		vertical-align: top
+		width: 100px
+		
+		a
+			color: #b8c3cf
+			
+			&:hover
+				color: lighten(#b8c3cf, 10)
+		
+		a.active
+			color: #ffffff
+			
+			&:hover
+				color: #ffffff
+				
+			
+.header_main_image
+	margin: 0
+	pointer-events: none 
+	position: absolute
+
+#header_wrapp
+	background: #242b3b url(#{$back_fe}index_banner/home.jpg) center top no-repeat
+	height: 430px
+	position: relative
+
+	.column
+		position: relative
+		
+.red_decoration
+	background: #b11f24
+	display: none
+	height: 5px
+	position: absolute
+	left: 50%
+	width: 225px
+	
+	
+#header_layer, #auxiliar_menu_layer
+	text-align: left
+	
+	h1
+		border-bottom: 1px solid #ffffff
+
+	ul
+		display: inline-block
+		list-style-type: none
+		margin: 0 0 0 33px
+		padding: 0
+		position: relative
+		
+	
+		a
+			background: transparent
+			color: #ffffff
+			display: block
+			height: 20px
+			padding: 5px 10px
+			
+			&:hover
+				background: rgba(12, 35, 68, .5)
+		
+		li
+			padding: 3px 5px
+			width: 90px
+			
+			li
+				width: 200px
+		
+		.current
+			a
+				background: rgba(12, 35, 68, .5)
+				
+			ul
+				a
+					background: transparent
+
+					&:hover
+						background: rgba(12, 35, 68, .5)
+		ul	
+			border-left: 1px solid #ffffff
+			height: 150px
+			left: 100%
+			margin: 0
+			position: absolute
+			top: 0
+			width: 160px
+
+#header_layer.invisible
+	display: none
+
+#auxiliar_menu_layer
+	display: none
+
+	div
+		display: none
+		
+	
+#auxiliar_menu_layer.visible
+	display: block
+	
+	div.current
+		display: block
+	
+#header_layer ul.submenu, #auxiliar_menu_layer ul.submenu
+	ul
+		display: none
+		
+#header_layer ul.submenu, #auxiliar_menu_layer ul.submenu
+	.current
+		ul
+			display: block
+#menu_group.container
+	padding: 0 0 20px
+						
+/* ****************** FOOTER ************** */
+#footer
+	background: #ffffff
+	font-size: 13px
+	margin:	-130px 0 0
+	position: relative
+		
+.eng
+	#footer_sitemap
+		li
+			a
+				height: 42px
+			
+			li
+				a
+					height: auto
+		
+#footer_sitemap
+	background: #0c2344 url(#{$back_fe}footer_line_pattern.jpg) top repeat-x
+	color: #ffffff
+	margin-bottom: -130px
+	padding: 41px 0 0
+	position: relative 
+	top: -130px
+
+	.wrapper
+		padding: 40px 25px 30px
+
+	a
+		border-bottom: 1px solid #ffffff
+		color: #ffffff
+		display: block
+		@extend %sourcesans_bold
+		letter-spacing: .06
+		
+		&:hover
+			color: darken(#ffffff, 15)
+
+	ul
+		display: block
+		margin: 0
+		padding: 0
+		
+		ul
+			margin: 10px 0 0
+	
+		
+	li
+		display: inline-block
+		vertical-align: top
+		width: 19.5%
+			
+
+		li
+			display: block
+			width: 100%
+
+
+			a
+				border: none
+				@extend %sourcesans
+				letter-spacing: .04
+				padding: 0 0 5px
+				
+	li.nosotros
+		width: 18%
+		
+	li.seguros
+		width: 15%
+		
+	li.tramites_permisos
+		width: 26.5%
+		
+
+ul#other_list_elements
+	border-top: 1px solid #000000
+	margin: 20px 0 0
+	padding: 20px  0 0
+	width: 97%
+	
+	a
+		border: none
+	
+#menu_other_links
+	display: inline-block
+	vertical-align: top
+	width: 620px
+				
+#footer_social
+	border: 1px solid black
+	border-bottom: none
+	border-top: none
+	display: inline-block
+	height: 200px
+	vertical-align: top
+	width: 145px
+	
+	p
+		margin: 0 auto
+		text-align: center
+		width: 95%
+	
+	span
+		border-bottom: 1px solid #ffffff
+		padding: 0 0 1px
+	
+	a, img
+		border: none
+		
+	img
+		margin: 10px 0  0
+		opacity: 1
+		@include transition(opacity 0.3s ease-in)
+		
+		&:hover
+			opacity: .4
+
+#footer_contact_data	
+	display: inline-block
+	vertical-align: top
+	width: 205px
+	
+	span
+		display: block
+		border-bottom: 1px solid #ffffff
+		margin-bottom: -10px
+		width: 65%
+		
+	.wrapper
+		padding: 0 0 0 15px
+		
+	p
+		margin: 0 0 15px
+
+#bottom_footer
+	padding: 30px 0 0
+	
+	p
+		display: inline-block
+		margin: 0 100px
+		padding: 10px 0  0
+		vertical-align: top
+		width: 250px
+	
+#footer_logo
+	display: inline-block
+	vertical-align: top
+
+#poweredby
+	border-bottom: 5px solid #b11f24
+	display: inline-block
+	text-align: left
+	vertical-align: top
+	width: 315px
+	
+	p
+		margin: 0
+		padding: 10px 0 20px
+		
+	a
+		color: #656565
+		
+		&:hover
+			color: lighten(#656565, 15)
+
+@import "screen_index.sass"
+@import "screen_nosotros.sass"
+@import "screen_tramites_permisos.sass"
+@import "screen_seguros.sass"
+@import "screen_auditorias.sass"
+@import "screen_compra_linea.sass"
+@import "screen_contacto.sass"

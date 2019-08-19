@@ -1,0 +1,89 @@
+ {% extends "layout/base.html" %}
+
+{% block site_wrapper %}
+{% autoescape off %}
+<div class="container">
+	<div class="column half first">
+		<h2>{{data.gral.title}}<span></span></h2>
+		<h3><strong>{{data.gral.mx_country}}</strong><span></span> {{data.gral.mx_city}}</h3>
+		<ul class="small_blue_arrow_list">
+			<li>{{data.gral.mx_address}}</li>
+			<li>{{data.gral.mx_tel_a}}</li>
+			<li>{{data.gral.mx_tel_b}}</li>
+		</ul>
+		<p><strong>Fax</strong> {{data.gral.mx_fax}}</p>
+		<h3><strong>{{data.gral.eu_country}}</strong><span></span> {{data.gral.eu_city}}</h3>
+		<ul class="small_blue_arrow_list">
+			<li>{{data.gral.eu_address}}</li>
+			<li> +{{data.gral.eu_tel}}</li>
+		</ul>
+		<p><strong>Fax</strong> +{{data.gral.eu_fax}}</p>	
+		
+		<div id="map_area"></div>
+		
+	</div><div class="column half">
+		<h2>{{data.form.title}}<span></span></h2>
+		<p class="blue_line_paragraph gray_thin_top_line">
+			<span></span> {{data.form.subtitle}}
+		</p>
+		<form method="post" action="#" id="contact_form">
+			<input type="hidden" name="lang" value="{{ln}}" />
+			<label>{{data.form.name}}* </label>
+			<input type="text" id="name" name="name" lang="es" class="custom_textbox required" />
+			<label>{{data.form.email}}*</label>
+			<input type="email" id="email" name="email" lang="es" class="custom_textbox required" />
+	
+			<label>{{data.form.telephone}}</label>
+			<input type="text" id="tel" name="tel" lang="es" class="custom_textbox required" />
+			<label>{{data.form.services}}</label>
+			<div id="fake_select">
+				<select id="select_service"  name="select_service">
+					{{data.form.list_services}}
+				</select>
+				<div id="select_decor"></div>
+			</div>	
+			<label>{{data.form.message}}* </label>
+			<textarea id="message" name="message" class="custom_textarea"></textarea>
+			<div class="column half first">
+				<p class="form_note"><span class="red_text">*</span> {{data.form.help}}</p>
+			</div><div class="column half first">
+				<input type="submit"  class="custom_submit" value="{{data.form.send}}" />
+			</div>
+		</form>
+		<span id="msg"></span>
+	</div>
+	<div id="directorio">
+		<h3>{{data.directory.title}}</h3>
+		<div class="column half first">
+			<ul>
+				{% for row in data.directory.employees %}
+				{% if forloop.counter < 5 %}
+				<li>
+					<h4>{{row.name}}</h4>
+					<a href="mailto:{{row.mail}}" title="{{row.contact}} {{row.name}}">{{row.mail}}</a>
+					<p>{{row.position}}<br />
+						{% if 'radio' in row %} ID {{row.radio}} {% endif %}
+					</p>
+				</li>
+				{% endif %}
+				{% endfor %}
+			</ul>
+		</div><div class="column half first">
+			<ul>
+				{% for row in data.directory.employees %}
+				{% if forloop.counter > 4 %}
+				<li>
+					<h4>{{row.name}}</h4>
+					<a href="mailto:{{row.mail}}" title="{{row.contact}} {{row.name}}">{{row.mail}}</a>
+					<p>{{row.position}}<br />
+						{% if 'radio' in row %} ID {{row.radio}} {% endif %}
+					</p>
+				</li>
+				{% endif %}
+				{% endfor %}
+			</ul>
+		</div>
+	</div>
+</div>
+{% endautoescape %}
+{% endblock %}

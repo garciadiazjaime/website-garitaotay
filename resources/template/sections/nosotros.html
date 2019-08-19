@@ -1,0 +1,141 @@
+ {% extends "layout/base.html" %}
+
+{% block site_wrapper %}
+{% autoescape off %}<span id="who-are-we"></span>
+<div id="first_block" class="light_gray">
+	<div id="quienes-somos" class="container">
+		<div class="column half first">
+			<h2>{{data.services.title}}<span></span></h2>
+			{{data.services.desc}}
+		</div><div class="column half">
+			<div id="img_logo_garita_grande"></div>
+		</div>
+	</div>
+</div>
+<div class="gradient_white">
+	<div class="container">
+		<div class="column half first">
+			<p class="big_text">{{data.services.recognition}}</p>
+		</div><div class="column half">
+			<p id="caic_logo">Caic</p>
+		</div>
+		<ul id="premios">
+			<li class="first">{{data.services.prize}} <em>2010</em></li><li>{{data.services.prize}} <em>2011</em></li><li>{{data.services.prize}} <em>2012</em></li>
+		</ul>
+	</div>
+</div><span id="mission-vision"></span>
+<div id="mision-vision" class="container">
+	<div class="column half first">
+		<h2>{{data.mission.title}}<span></span></h2>
+		<p>{{data.mission.desc}}</p>
+	</div><div class="column half">
+		<h2>{{data.vision.title}}<span></span></h2>
+		<p>{{data.vision.desc}}</p>
+	</div>
+</div>	
+<span id="values"></span>
+<div id="valores" class="light_gray">
+	<div class="container">
+		<div class="column half first">
+			<h2>{{data.values.title}}<span></span></h2>
+			<p>{{data.values.desc}}</p>
+		</div><div class="column half">
+			<div class="line_pattern_decoration"></div>
+		</div>
+		
+		<div class="column half first">
+			<div id="valores_img"></div>
+		</div><div class="column half">
+			<ul class="arrow_list">
+				<li>
+					<h4>{{data.values_list.ethic_title}}</h4>
+					<p>{{data.values_list.ethic_desc}}</p>
+				</li>
+				<li>
+					<h4>{{data.values_list.honesty_title}}</h4>
+					<p>{{data.values_list.honesty_desc}}</p>
+				</li>
+				<li>
+					<h4>{{data.values_list.commitment_title}}</h4>
+					<p>{{data.values_list.commitment_desc}}</p>
+				</li>
+				<li>
+					<h4>{{data.values_list.human_quality_title}}</h4>
+					<p>{{data.values_list.human_quality_desc}}</p>
+				</li>
+			</ul>
+		</div>
+	</div>
+</div><span id="competitive-advantages"></span>
+<div class="gradient_white">
+	<div id="ventajas-competitivas" class="container">
+		<div class="column half first">
+			<h2>{{data.competitive_advantage.title}}<span></span></h2>
+			<p>{{data.competitive_advantage.desc}}</p>
+		</div><div class="column half"></div>
+		
+		<div class="column half first">
+			<ul class="small_arrow_list">
+				{{data.competitive_advantage.list_left}}
+			</ul>
+		</div><div class="column half">
+			<ul class="small_arrow_list">
+				{{data.competitive_advantage.list_right}}
+			</ul>
+		</div>
+	</div>
+</div><span id="our-clients"></span>
+<div class="gradient_white">
+	<div id="nuestros_clientes" class="container">
+		<div class="column half first">
+			<h2>{{data.our_clients.title}}<span></span></h2>
+		</div><div class="column half"></div>
+
+		<div class="column half first">	
+			<div class="client_icons burger_king"></div>
+			<div class="client_icons mateo"></div>
+			<div class="client_icons frapesa"></div>
+			<div class="client_icons arnian"></div>
+			<div class="client_icons ulloa"></div>
+		</div><div class="column half">
+			<h3>{{data.our_clients.subtitle}}<span></span></h3>
+			<ul class="column half">
+				<li>{{data.our_clients.l1}}</li>
+				<li>{{data.our_clients.l2}}</li>
+				<li>{{data.our_clients.l3}}</li>
+			</ul><ul class="column half">
+				<li>{{data.our_clients.l4}}</li>
+				<li>{{data.our_clients.l5}}</li>
+				<li>{{data.our_clients.l6}}</li>
+			</ul>
+		</div>
+	</div>
+</div><span id="insurance-companies"></span>
+<div id="companias-aseguradoras" class="container">
+	<div class="column half first">
+		<h2>{{data.insurance_companies.title}}<span></span></h2>
+	</div><div class="column half"></div>
+
+	<div class="column half grey-right-border">	
+		<h3><span></span>{{data.insurance_companies.comp_ame}}</h3>
+		<div class="client_icons global-hawk"></div>
+		<div class="client_icons caic"></div>
+		<div class="client_icons national-unity"></div>
+		<div class="client_icons aic"></div>
+		<div class="client_icons progressive"></div>
+		<div class="client_icons allstate"></div>
+		<div class="client_icons access"></div>
+		<div class="client_icons chartis"></div>
+	</div><div class="column half">
+		<h3><span></span>{{data.insurance_companies.comp_mex}}</h3>
+		<div class="client_icons axa"></div>
+		<div class="client_icons qualitas"></div>
+		<div class="client_icons metropolitana"></div>
+		<div class="client_icons atlas"></div>
+		<div class="client_icons general"></div>
+	</div>
+</div>
+
+
+{% endautoescape %}
+{% endblock %}

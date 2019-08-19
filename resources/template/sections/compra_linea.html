@@ -1,0 +1,24 @@
+ {% extends "layout/base.html" %}
+
+{% block site_wrapper %}
+{% autoescape off %}
+<div id="compra_linea_block" >
+	<div class="container">
+		<h2>Compra en Línea<span></span></h2>
+		<div class="column half first gray_thin_top_line">
+			<p class="big_text">{{data.section.intro}}</p>
+			{{data.section.desc}}
+			<p class="big_text"><strong>{{data.section.foot}}</strong></p>
+		</div><div class="column half">
+			<img src="static/media/fe/compra.jpg" alt="{{data.section.alt}}" />
+		</div>
+		
+		<div class="column half first">
+			<h3>{{data.section.header_insurance}}</h3>
+			<p>{{data.section.insurance_text}}</p>
+			<a href="{{data.section.insurance_link}}" title="{{data.section.insurance_title}}" class="button" target="_blank"><span><span>{{data.section.insurance_link_text}}</span></span></a>
+		</div><div class="column half"></div>
+	</div>
+</div>
+{% endautoescape %}
+{% endblock %}

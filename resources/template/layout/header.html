@@ -1,0 +1,181 @@
+{% autoescape off %}
+<div id="header_wrapp">	
+	<span class="red_decoration"></span>
+	<div id="menu_group" class="container">
+		<div class="column first">
+			<a href="/inicio" title="Inicio"><img src="/static/media/logo_garitaotay.jpg" alt="Servicios Garita Otay"></a>
+			{{main_menu}}			
+		</div><div class="column">
+			<div id="header_social">
+				<a href="#" title="Facebook" target="_blank"><img src="/static/media/fe/facebook_header.png" alt="Facebook"></a>
+			</div><p id="language"><a href="/{{data.info_gral.section}}" title="Cambiar idioma a español" class="{{es_active}}">Esp</a> / <a href="/{{data.info_gral.section_lang}}" title=" Change language to english" class="{{en_active}}">Eng</a></p>
+			<div id="header_layer" class="visible">
+				<div class="{{data.info_gral.section}}">
+				{% if data.info_gral.section == "inicio" %}					
+					<h1><span class="first">{{data.submenu.a}}</span>
+						<span>{{data.submenu.b}}</strong>
+					</h1>
+				{% endif %}
+				{% if data.info_gral.section == "nosotros" %}					
+					<h1>{{data.submenu.title}}</h1>
+					<ul class="submenu">
+						{% for row in data.submenu.list %}
+						<li class="{{row.href}} {% if row.href == category %}current{% endif %} submenu_element"><a href="/{{data.submenu.href}}/{{row.href}}" title="{{row.title}}">{{row.title}}</a></li>
+						{% endfor %}					
+					</ul>																		
+				{% endif %}
+				{% if data.info_gral.section == "tramites" or data.info_gral.section == "permisos" %}					
+					<h1>{{data.submenu.title}}</h1>
+					<ul class="submenu">
+						<li class="tramites_permisos {% if data.info_gral.section == "tramites" %}current{% endif %} submenu_element"><a href="/{{data.submenu.list_a.href}}" title="Trámites">{{data.submenu.list_a.title}}</a>
+							<ul id="tramites_permisos_list" class="active">
+								{% for row in data.submenu.list_a.items %}
+								<li><a href="/{{data.submenu.list_a.href}}/{{row.href}}" title="{{row.title}}"><span>{{row.title}}</span></a></li>
+								{% endfor %}
+							</ul>
+						</li>
+						<li class="permisos {% if data.info_gral.section == "permisos" %}current{% endif %} submenu_element"><a href="/{{data.submenu.list_b.href}}" title="Permisos">{{data.submenu.list_b.title}}</a>
+							<ul id="permisos_list">
+								{% for row in data.submenu.list_b.items %}
+								<li><a href="/{{data.submenu.list_b.href}}/{{row.href}}" title="{{row.title}}"><span>{{row.title}}</span></a></li>
+								{% endfor %}									
+							</ul>	
+						</li>
+					</ul>								
+				{% endif %}
+				{% if data.info_gral.section == "seguros" %}										
+					<h1>{{data.submenu.title}}</h1>
+					<ul class="submenu">
+						{% for row in data.submenu.list %}
+						<li class="{% if row.href == category %}current{% endif %}"><a href="/{{data.submenu.href}}/{{row.href}}" title="{{row.title}}">{{row.title}}</a></li>
+						{% endfor %}				
+					</ul>
+				{% endif %}
+				{% if data.info_gral.section == "auditorias" %}
+				<h1>{{data.submenu.title}}
+					<span class="small_text">{{data.submenu.subtitle}}</span>
+				</h1>
+				{% endif %}
+				{% if data.info_gral.section == "compra_linea" %}
+					<h1>{{data.submenu.title}}</h1>
+				{% endif %}
+				{% if data.info_gral.section == "contacto" %}
+					<h1>{{data.submenu.title}}</h1>
+				{% endif %}				
+				</div>
+			</div>	
+			<div id="auxiliar_menu_layer" class="invisible">
+	
+				{% if ln == 0 %}
+					<div id="m_inicio_layer" class="inicio">
+						<h1><span class="first">Su Mejor Alternativa</span>
+							<span>en <strong>Trámites y Permisos</span></strong>
+						</h1>
+					</div>
+					<div id="m_nosotros_layer" class="nosotros">
+						<h1>Nosotros</h1>
+						<ul class="submenu">
+							<li class="quienes_somos submenu_element"><a href="/nosotros/quienes_somos" title="Quiénes somos">Quiénes somos</a></li>
+							<li class="mision_vision submenu_element"><a href="/nosotros/mision_vision" title="Quiénes somos">Misión y Visión</a></li>
+							<li class="valores submenu_element"><a href="/nosotros/valores" title="Valores">Valores</a></li>
+							<li class="ventajas submenu_element"><a href="/nosotros/ventajas_competitivas" title="Ventajas Competitivas">Ventajas Competitivas</a></li>
+						</ul>
+					</div>
+					<div id="m_tramites_layer" class="tramites">
+						<h1>Trámites y Permisos</h1>
+						<ul class="submenu">
+							<li class="tramites submenu_element"><a href="/tramites" title="Trámites">Trámites</a>
+								<ul id="tramites_list current" class="active">
+									<li><a href="/tramites/dmv" title="Trámites DMV"><span>Trámites DMV</span></a></li>
+									<li><a href="/tramites/eu" title="Trámites en E.U."><span>Trámites en E.U.</span></a></li>
+									<li><a href="/tramites/mexico" title="Trámites en E.U."><span>Trámites en México</span></a></li>
+								</ul>
+							</li>
+							<li class="permisos submenu_element"><a href="/permisos" title="Permisos">Permisos</a>
+								<ul  id="permisos_list">
+									<li><a href="/permisos/eu" title=" Permisos en E.U."><span>Permisos en E.U.</span></a></li>
+								</ul>	
+							</li>
+						</ul>
+					</div>
+					<div id="m_seguros_layer" class="seguros">
+						<h1>Seguros</h1>
+						<ul class="submenu">
+							<li><a href="/seguros/eu" title="Seguros en E.U.">Seguros en E.U.</a></li>
+							<li><a href="/seguros/mexico" title="Seguros en México">Seguros en México</a></li>
+						</ul>
+					</div>
+					<div id="m_auditorias_layer" class="auditorias">
+						<h1>Auditorías
+							<span class="small_text">Servicio de consultoría en auditorías</span>
+						</h1>
+					</div>
+					<div id="m_compra_linea_layer" class="compra_linea">
+						<h1>Compra en línea</h1>
+					</div>
+					<div id="m_contacto_layer" class="contacto">
+						<h1>Contacto</h1>
+					</div>
+					
+				{% endif %}
+				{% if ln == 1 %}
+					<div id="m_home_layer" class="inicio">
+						<h1><span class="first">Your best alternative</span>
+							<span>in <strong>Procedures and Permits</span></strong>
+						</h1>
+					</div>
+					<div id="m_about-us_layer" class="nosotros">
+						<h1>About Us</h1>
+						<ul class="submenu">
+							<li class="quienes_somos current submenu_element"><a href="/about-us" title="Who are we">Who are we</a></li>
+							<liclass="mision_vision submenu_element"><a href="/about-us/mission_vision" title="Mission and Vision">Mission and Vision</a></li>
+							<li class="valores submenu_element"><a href="/about-us/values" title="Values">Values</a></li>
+							<li class="ventajas submenu_element"><a href="/about-us/competitive_advantages" title="Competitive advantages">Competitive advantages</a></li>
+						</ul>
+					</div>
+					<div id="m_procedures_layer" class="tramites">
+						<h1>Procedures and Permits</h1>
+						<ul class="submenu">
+							<li class="tramites_permisos current submenu_element"><a href="/procedures" title="Procedures">Procedures</a>
+								<ul id="tramites_permisos_list" class="active">
+									<li><a href="/procedures/dmv" title="DMV Procedures"><span>Procedures DMV</span></a></li>
+									<li><a href="/procedures/us" title="Procedures in U.S."><span>Procedures in U.S.</span></a></li>
+									<li><a href="/procedures/mexico" title="Procedures in Mexico"><span>Procedures in Mexico</span></a></li>
+								</ul>
+							</li>
+							<li class="permits submenu_element"><a href="/permits" title="Permisos">Permits</a>
+								<ul  id="permits_list">
+									<li><a href="/permits/us" title=" Permits in U.S."><span>Permits in U.S.</span></a></li>
+								</ul>	
+							</li>
+						</ul>
+					</div>
+					<div id="m_insurance_layer" class="seguros">
+						<h1>Insurance</h1>
+						<ul class="submenu">
+							<li><a href="/insurance/us" title="Insurance in U.S.">Insurance in U.S.</a></li>
+							<li><a href="/insurance/mexico" title="Insurance in México">Insurance in Mexico</a></li>
+						</ul>
+					</div>
+					<div id="m_audits_layer" class="auditorias">
+						<h1>Audits
+							<span class="small_text">Consultory service in audits</span>
+						</h1>
+					</div>
+					<div id="m_buy_online_layer" class="compra_linea">
+						<h1>Buy Online</h1>
+					</div>
+					<div id="m_contact_layer" class="contacto">
+						<h1>Contact</h1>
+					</div>
+					
+				{% endif %}
+				
+			</div>
+			<div class="header_main_image"></div>
+			
+		</div>
+	
+	</div>
+</div>
+{% endautoescape %}

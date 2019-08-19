@@ -1,0 +1,77 @@
+ {% extends "layout/base.html" %}
+
+{% block site_wrapper %}
+{% autoescape off %}<span id="us"></span>
+	<div id="eu" class="top_gray_line">
+		<div class="container">
+			<h2 class="country_back_eu">{{data.eu.title}}<span></span></h2>	
+			<div class="column half first">
+				<ul id="s_eu" class="slider_navigation" alt="slide_seguros_eu_wrapper">
+					<li id="s_eu_prev" class="prev"></li>
+					<li id="s_eu_next" class="next"></li>
+				</ul>
+				<div id="slide_seguros_eu_wrapper">
+					<div id="slider_seguros_eu" class="grid_slider">
+						<ul>
+							{% for row in eu %}
+							<li id="{{row.id}}_slide" class="{% if forloop.first %}current first{% elif forloop.last %}last{% endif %}">
+								{% if row.title %}<h4>{{row.title}}</h4>{% endif %}
+								<div class="s_eu_text">{{row.desc}}</div>
+							</li>
+							{% endfor %}
+						</ul>	
+					</div><!-- #slider_eu -->
+				</div><!-- #slide_eu_wrapper -->
+			</div><div class="column half">
+				<div class="slideshow">
+					<img src="/media/fe/seguros/eu/GO_seguros_EU_01.jpg" alt="eu" />
+					<img src="/media/fe/seguros/eu/GO_seguros_EU_02.jpg" alt="eu" class="hide" />
+				</div>
+			</div>
+		</div>
+		<div id="background_gray" class="top_gray_line grid">
+			<h3>{{data.eu.subtitle}}</h3>
+			<ul id="seguros_eu_menu" class="slide_seguros_eu_wrapper">
+				{% for row in eu %}{% if not forloop.first %}{% if forloop.counter == 2 %}<li id="{{row.id}}" class="first two_lines"><span>{{row.title}}</span></li>{% elif forloop.counter0|divisibleby:"3" %}<li id="{{row.id}}" class="last  {% if forloop.counter == 7 or forloop.counter == 10  %} two_lines {% endif %}"><span>{{row.title}}</span></li>{% elif forloop.counter == 5 or forloop.counter == 8 or forloop.counter == 11 or forloop.counter == 14 %}<li id="{{row.id}}" class="first {% if forloop.counter == 8 %} two_lines {% endif %}"><span>{{row.title}}</span></li>{% else %}<li id="{{row.id}}" class=" {% if forloop.counter == 3  and ln == 0 %} two_lines {% endif %}"><span>{{row.title}}</span></li>{% endif %}{% endif %}{% endfor %}
+			</ul>
+		</div>
+	</div><!-- #seguros_eu -->
+	
+	<div id="seguros_mexico"><span id="mx"></span>
+		<div id="content_seguros_mexico">
+			<div class="container" id="mexico">
+				<h2 class="country_back_mx">{{data.mx.title}}<span></span></h2>
+				<div class="column half first">
+					<ul id="s_mexico" class="slider_navigation" alt="slide_seguros_mexico_wrapper">
+						<li id="s_mexico_prev" class="prev"></li>
+						<li id="s_mexico_next" class="next"></li>
+					</ul>
+					<div id="slide_seguros_mexico_wrapper">
+						<div id="slider_seguros_mexico" class="grid_slider">
+							<ul>
+								{% for row in mx %}
+								<li id="{{row.id}}_slide" class="{% if forloop.first %}current first{% elif forloop.last %}last{% endif %}">
+									{% if row.title %}<h4>{{row.title}}</h4>{% endif %}
+									<div class="s_mexico_text">{{row.desc}}</div>
+								</li>
+								{% endfor %}
+							</ul>		
+						</div><!-- #slider_s_mexico -->
+					</div><!-- #slide_seguros_mexico_wrapper -->
+				</div><div class="column half">
+					<div class="slideshow">
+						<img src="/media/fe/seguros/mx/GO_seguros_MX_01.jpg" alt="mx" />
+						<img src="/media/fe/seguros/mx/GO_seguros_MX_02.jpg" alt="mx" class="hide" />
+					</div>
+				</div>	
+			</div>	
+			<div id="background_gray" class="top_gray_line grid">
+				<h3>{{data.mx.subtitle}}</h3>
+				<ul id="seguros_mexico_menu" class="slide_seguros_mexico_wrapper">
+					{% for row in mx %}{% if not forloop.first %}{% if forloop.counter == 2 %}<li id="{{row.id}}" class="first {% if ln == 0 %} two_lines {% endif %}"><span>{{row.title}}</span></li>{% elif forloop.counter0|divisibleby:"3" %}<li id="{{row.id}}" class="last"><span>{{row.title}}</span></li>{% elif forloop.counter == 5 or forloop.counter == 8 or forloop.counter == 11 or forloop.counter == 14 %}<li id="{{row.id}}" class="first"><span>{{row.title}}</span></li>{% else %}<li id="{{row.id}}" class=""><span>{{row.title}}</span></li>{% endif %}{% endif %}{% endfor %}<li id="s_mexico_blank" class="last"><span></span></li>
+				</ul>
+			</div>
+		</div>
+	</div><!-- #seguros_mexico -->
+{% endautoescape %}
+{% endblock %}

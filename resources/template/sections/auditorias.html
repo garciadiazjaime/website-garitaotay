@@ -1,0 +1,29 @@
+ {% extends "layout/base.html" %}
+
+{% block site_wrapper %}
+{% autoescape off %}
+<div id="depto_consultoria_asesoria" >
+	<div class="container"> <span id="consultation"></span><span id="consultoria"></span>
+		<h2>{{data.departamento.title}}<span></span></h2>
+		<div class="column half first gray_thin_top_line">
+			{{data.departamento.desc}}
+		</div><div class="column half">
+			<img src="/static/media/fe/auditorias.jpg" alt="{{data.departamento.alt}}" />
+		</div>
+		<div class="column half first">
+			<ul class="arrow_list strong">
+				<li>{{data.departamento.list.a}}</li>
+				<li>{{data.departamento.list.b}}</li>
+				<li>{{data.departamento.list.c}}</li>
+			</ul>
+		</div><div class="column half">
+			<ul class="arrow_list strong">
+				<li>{{data.departamento.list.d}}</li>
+				<li>{{data.departamento.list.e}}</li>
+				<li>{{data.departamento.list.f}}</li>
+			</ul>	
+		</div>
+	</div>
+</div>
+{% endautoescape %}
+{% endblock %}

@@ -1,0 +1,52 @@
+ {% extends "layout/base.html" %}
+
+{% block site_wrapper %}
+{% autoescape off %}
+	<div class="container"><span id="servicios"></span><span id="services"></span>
+		<div class="column half first">
+			<h2>{{data.a.title}}<span></span></h2>
+			<p>{{data.a.desc}}</p>
+		</div><div class="column half"></div>
+	</div><span id="procedures"></span><span id="insurance"></span><span id="tramites"></span><span id="seguros"></span>
+	<ul id="index_services">
+		<li  id="ind_s_tramites" class="first">
+			<h3><a href="/{{data.tramites.href}}" title="Trámites"><span>{{data.tramites.title}}</span></a></h3>
+			<div><p>{{data.tramites.desc}}</p>
+				<a href="/{{data.tramites.btn_href}}" title="{{data.tramites.btn_text}}" class="button"><span><span>{{data.tramites.btn_text}}</span></span></a>
+			</div>
+		</li><li  id="ind_s_permisos">
+			<h3><a href="/{{data.permisos.href}}" title="Permisos"><span>{{data.permisos.title}}</span></a></h3>
+			<div><p>{{data.permisos.desc}}</p>
+				<a href="/{{data.permisos.btn_href}}" title="{{data.permisos.btn_text}}" class="button"><span><span>{{data.permisos.btn_text}}</span></span></a>
+			</div>
+		</li><li id="ind_s_seguros">
+			<h3><a href="/{{data.seguros.href}}" title="Seguros"><span>{{data.seguros.title}}</span></a></h3>
+			<div><p>{{data.seguros.desc}}</p>
+				<a href="/{{data.seguros.btn_href}}" title="{{data.seguros.btn_text}}" class="button"><span><span>{{data.seguros.btn_text}}</span></span></a>
+			</div>
+		</li><li  id="ind_s_auditorias">
+			<h3><a href="/{{data.auditorias.href}}" title="Auditorías"><span>{{data.auditorias.title}}</span></a></h3>
+			<div><p>{{data.auditorias.desc}}</p>
+				<a href="/{{data.auditorias.btn_href}}" title="{{data.auditorias.btn_text}}" class=" button"><span><span>{{data.auditorias.btn_text}}</span></span></a>
+			</div>
+		</li>
+	</ul>
+	<div id="index_contactanos" class="right_image_space">
+		<div class="column half first">
+			<h2>{{data.nosotros.title}}<span></span></h2>
+			<p>{{data.nosotros.desc}}</p>
+			<a href="/{{data.nosotros.btn_href}}" title="{{data.nosotros.btn_text}}" class="button"><span><span>{{data.nosotros.btn_text}}</span></span></a>
+		</div><div class="column half">
+			<a href="/{{data.contacto.btn_href}}" title="{{data.contacto.btn_text}}" class="red_arrow_button">{{data.contacto.btn_text}}</a>
+		</div>
+	</div>	
+	<div id="index_compra" class="top_gray_line">
+		<div class="column half first">
+		</div>
+		<span id="buy_online"></span><span id="compra_linea"></span>
+		<h2>{{data.compra_linea.title}}<span></span></h2>
+		{{data.compra_linea.desc}}
+		<a href="/{{data.compra_linea.btn_href}}" title="{{data.compra_linea.btn_text}}" class=" button"><span><span>{{data.compra_linea.btn_text}}</span></span></a>
+	</div>
+{% endautoescape %}	
+{% endblock %}

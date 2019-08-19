@@ -1,0 +1,203 @@
+/* ****************** AUDITORÍAS  ************** */
+
+.contacto
+
+	h2
+		margin-top: 0
+	
+	#header_wrapp
+		background-image: url(#{$back_fe}index_banner/contacto.jpg)
+
+	#first_block
+		margin: -50px 0 0
+		padding: 50px 0 0
+		
+		
+	.header_main_image
+		background: url(#{$back_fe}contacto_image.png) 0 0 no-repeat
+		height: 286px
+		right: 105px
+		top: 175px
+		width: 204px		
+		
+	h3
+		background: #f7f7f7
+		border-bottom: 1px solid #8c8c8c
+		border-top: 1px solid #8c8c8c
+		@extend %sourcesans
+		font-weight: normal
+		padding: 5px 25px
+	
+		strong
+			@extend %sourcesans_bold
+			font-weight: normal
+			
+		span
+			border-bottom: 2px solid #b11f24
+			display: inline-block
+			margin: 0 0 -3px 3px
+			width: 10px
+			
+	
+	strong
+		@extend %sourcesans_bold
+		font-weight: normal
+		
+	.column.first
+		
+		ul
+			margin: 15px 0 0 25px
+			
+		p
+			margin: 10px 0 15px 25px
+			
+	.gray_thin_top_line, form
+		border-top: 1px solid #8c8c8c
+		padding: 15px 0 0
+	
+	.column
+		.column
+			text-align: right
+			
+			p
+				margin-left: 0
+			
+		.column.first
+			text-align: left
+
+	.half
+		border-left: 1px solid #8c8c8c
+		width: 47.5%
+		
+	.half.first
+		border-left: none
+		width: 48%
+		
+		
+#map_area
+	height: 300px
+	margin: 50px 0 40px
+
+.blue_line_paragraph
+	span
+		background: url(#{$back_fe}blue_list_small_arrow.png) left 3px no-repeat
+		display: inline-block
+		height: 16px
+		vertical-align: bottom
+		width: 12px
+
+label
+	background: url(#{$back_fe}red_list_small_arrow.png) left 5px no-repeat
+	display: block
+	margin: 0 0 3px
+	padding: 0 0 0 15px
+
+
+.custom_textbox, .custom_textarea	
+	background: #f7f7f7	
+	border: 1px solid #8c8c8c
+	@include border-radius()
+	color: #848383
+	@extend %sourcesans
+	font-size: 13px
+	letter-spacing: .03em
+	margin: 0 0 10px
+	padding: 5px 10px
+	width: 100%
+
+.custom_textarea
+	height: 150px
+
+
+.custom_submit
+	background: url(#{$back_fe}sprite_custom_submit.png) 0 0 no-repeat
+	border: none
+	color: #656565
+	cursor: pointer
+	display: block
+	font-size: 12px
+	height: 33px
+	margin: 10px 0 0 auto
+	padding: 7px 20px 7px 7px
+	text-align: left
+	width: 115px
+
+	&:hover
+		background-position: 0 -256px
+		color: #b2b2b2
+
+#select_service
+	margin: 0 0 10px
+	@extend %sourcesans
+	font-size: 13px
+
+			
+#directorio
+	font-size: 15px
+	
+	.column.first
+		ul, p
+			margin-left: 0
+	
+	.half
+		border-left: none
+		width: 48%
+		
+	ul
+		list-style-type: none
+		margin: 0
+		padding: 0 0 0 20px
+		
+	h3
+		@extend %sourcesans_bold
+		font-size: 15px
+		
+	h4
+		margin-bottom: 0
+		letter-spacing: .04em
+		
+	a
+		color:  #254e89
+		
+		&:hover
+			color: lighten(#254e89, 10)
+			
+	p
+		margin-top: 0
+		margin-bottom: 0
+		
+#select_service
+	background: transparent
+	border: none
+	height: 35px
+	margin: 0
+	padding: 6px 10px
+	position: relative
+	width: 110%
+	z-index: 10
+	
+#fake_select
+	overflow: hidden
+	max-width: 100%
+	position: relative
+	
+	#select_decor
+		background: #F7F7F7 url(#{$back_fe}sprite_select.png) right 6px no-repeat
+		border: 1px solid #8C8C8C
+		@include border-radius()
+		height: 20px
+		left: 0
+		padding: 5px 0
+		position: absolute
+		top: 0
+		width: 99.5%
+		z-index: 5
+	
+	&:hover
+		#select_decor
+			background-color: lighten(#F7F7F7, 5)
+			background-position: right -224px
+			
+
+label.required
+	color: #a51111

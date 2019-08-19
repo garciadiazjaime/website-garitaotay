@@ -1,0 +1,54 @@
+ {% extends "layout/base.html" %}
+
+{% block site_wrapper %}
+{% autoescape off %}
+	<div id="first_block">
+		<div class="container">
+			<div class="column half first">
+				<h2 class="gray_text">{{data.tramites_permisos.title}}</h2>
+			</div><div class="column half">
+				<a href="/{{data.tramites_permisos.button_url}}" title="{{data.tramites_permisos.button_text}}" class="button"><span><span>{{data.tramites_permisos.button_text}}</span></span></a>
+			</div>
+			<div class="column half first">
+				<p>{{data.tramites_permisos.desc_left}}</p>
+			</div><div class="column half">
+				<p>{{data.tramites_permisos.desc_right}}</p>
+			</div>
+		</div>
+	</div>
+	<div id="eu" class="top_gray_line">
+		<div class="container">
+			<h2 class="country_back_eu">{{data.tramites_permisos.subtitle}}<span></span></h2>
+			<div class="column half first">
+				<ul id="p_eu" class="slider_navigation" alt="slide_p_eu_wrapper"> 
+					<li id="p_eu_prev" class="prev"></li>
+					<li id="p_eu_next" class="next"></li>
+				</ul>
+				<div id="slide_p_eu_wrapper">
+					<div id="slider_p_eu" class="grid_slider">
+						<ul>
+							{% for row in eu %}
+							<li id="{{row.id}}_slide" class="{% if forloop.first %}current first{% elif forloop.last %}last{% endif %}">
+								{% if row.title %}<h4>{{row.title}}</h4>{% endif %}
+								<div class="p_eu_text">{{row.desc}}</div>
+							</li>
+							{% endfor %}
+						</ul>
+					</div><!-- #slider_eu -->
+				</div><!-- #slide_eu_wrapper -->
+			</div><div class="column half">
+				<div class="slideshow">
+					<img src="/media/fe/permisos/eu/GO_permisos_01.jpg" alt="eu" />
+					<img src="/media/fe/permisos/eu/GO_permisos_02.jpg" alt="eu" class="hide" />
+				</div>
+			</div>	
+		</div>	
+		<div id="background_gray" class="top_gray_line grid">
+			<h3>Conoce nuestros permisos en E.U. </h3>
+			<ul id="permisos_eu_menu" class="slide_p_eu_wrapper">
+				{% for row in eu %}{% if forloop.first == 1 %}<li id="{{row.id}}" class="first"><span>{{row.title}}</span></li>{% elif forloop.counter|divisibleby:"3" %}<li id="{{row.id}}" class="last two_lines"><span>{{row.title}}</span></li>{% elif forloop.counter == 4 or forloop.counter == 7 or forloop.counter == 10 or forloop.counter == 13  %}<li id="{{row.id}}" class="first {% if forloop.counter == 7 and ln == 0 %} two_lines {% endif %} "><span>{{row.title}}</span></li>{% else %}<li id="{{row.id}}" class=""><span>{{row.title}}</span></li>{% endif %}{% endfor %}
+			</ul>
+		</div>
+	</div><!-- #permisos_eu -->
+{% endautoescape %}
+{% endblock %}

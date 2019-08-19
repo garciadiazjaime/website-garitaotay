@@ -1,0 +1,178 @@
+/* ****************** INDEX ************** */
+
+#header_layer, #auxiliar_menu_layer
+	.inicio
+		h1
+			border-bottom: none
+			width: auto
+			
+.inicio	
+	#header_layer
+		h1
+			border-bottom: none
+			width: auto		
+.inicio
+	h1
+		border-bottom: none
+		font-size: 35px
+		line-height: 1.2em
+		margin: 80px 0 0 40px
+		padding: 0
+		width: auto
+		
+		span
+			display: block
+			padding: 0 0 0 10px
+			
+		span.first
+			border-left: 1px solid #FFFFFF
+
+		strong
+			font-size: 50px
+	h2
+		margin-top: 0
+	
+	#header
+		background: transparent
+		border: none
+		padding: 0 0 120px
+		
+	.red_decoration
+		display: block
+		left: 0
+		margin-left: -285px
+		top: 430px
+		width: 50%
+	
+	.header_main_image	
+		background: url(#{$back_fe}truck_image.png) 0 0 no-repeat
+		height: 310px
+		margin: 0
+		right: -160px
+		top: 240px
+		width: 838px
+		
+	#content	
+		margin: -120px auto 130px
+		
+		.red_decoration
+			display: none
+		
+#index_services	
+	@include background-image(linear-gradient(#dfe2e6, #f7f7f7))
+	margin: 100px 0 0
+	padding: 20px 4% 0
+	
+	li	
+		display: inline-block
+		vertical-align: top
+		width: 25%
+	
+		p
+			margin-top: 0
+	
+	h3
+		background: #ffffff
+		font-size: 17px
+		height: 40px
+		margin: -59px 0 0
+		
+		a
+			background: url(#{$back_fe}sprite_index_services_headers.png) left 0 no-repeat
+			color: #666666
+			display: block
+			height: 25px
+			padding: 10px 0 7px 44px
+			
+			&:hover
+				color: lighten(#666666, 15)
+				
+			span
+				border-bottom: 5px solid #254e89
+				display: block
+				padding:  0 0 0 11px
+				width: 90%
+	
+	#ind_s_permisos
+		h3
+			a
+				background-position: left -187px
+	
+	#ind_s_seguros
+		h3
+			a
+				background-position: left -385px
+	
+	#ind_s_auditorias
+		h3
+			a
+				background-position: left -618px
+				
+				
+				
+	div
+		background: url(#{$back_fe}pattern_service_index.png) left repeat-y
+		border-left: 1px solid #ffffff
+		height: 180px
+		padding: 25px 15px 50px 45px
+		position: relative
+		
+	.button	
+		bottom: 10px
+		position: absolute
+		right: 14px
+		text-transform: lowercase
+		
+#index_contactanos		
+	background: url(#{$back_fe}sprite_index.jpg) right 0 no-repeat
+	height: 313px
+	padding: 0 0 0 4%
+		
+	.column
+		padding: 12px 0 0
+		text-align: right
+		
+	.column.first
+		padding: 60px 0 0
+		text-align: left
+
+	.button
+		display: block
+		margin:  80px 0 0 auto
+		width: 150px
+	
+#index_compra
+	background: url(#{$back_fe}sprite_index.jpg) left -313px no-repeat
+	height: 270px
+	margin-bottom: 10px
+	padding: 60px 5% 0 50%
+	
+	.button
+		display: block
+		margin:  0 0 0 auto
+		width: 150px
+			
+	
+
+.red_arrow_button
+	background:  url(#{$back_fe}sprite_red_arrow_button.png) right 4px no-repeat
+	color: #ffffff
+	display: block
+	font-size: 14px
+	height: 20px
+	@extend %sourcesans_bold
+	padding: 0 20px 0 0
+	
+	&:hover
+		background-position: right -155px
+		
+.eng
+	#ind_s_auditorias
+		h3
+			font-size: 15px
+			line-height: 1em
+			height: 40px
+			
+			span
+				margin: -6px 0 0
+	
